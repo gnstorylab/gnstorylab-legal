@@ -1,0 +1,436 @@
+/* Estilos Generales y Tipografia */
+:root {
+    --primary: #5C6BC0;
+    --primary-dark: #3949AB;
+    --accent: #FFD54F;
+    --accent-orange: #FF9800;
+    --bg-light: #F8F9FE;
+    --text-main: #2C3E50;
+    --text-muted: #64748B;
+    --card-bg: #FFFFFF;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fredoka', cursive, sans-serif;
+    color: #1E293B;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Barra Superior de Idioma */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.lang-switch {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    padding: 4px 6px;
+    gap: 4px;
+}
+
+.lang-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+    background: #FFD54F;
+    color: #311B92;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+.flag-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    color: currentColor;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-right: 6px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+.lang-btn.active .flag-tag {
+    background: rgba(49, 27, 146, 0.15);
+}
+
+.lang-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Header & Hero */
+.hero {
+    background: linear-gradient(135deg, #4A148C 0%, #311B92 50%, #1A237E 100%);
+    color: white;
+    padding: 30px 0 60px;
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 15px 30px rgba(49, 27, 146, 0.25);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFD54F;
+}
+
+.hero h1 {
+    font-size: 46px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero .tagline {
+    font-size: 18px;
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: #E2E8F0;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background: #FFD54F;
+    color: #311B92;
+    box-shadow: 0 6px 16px rgba(255, 213, 79, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #FFE082;
+}
+
+.btn-secondary {
+    background: #00E676;
+    color: #004D40;
+    box-shadow: 0 6px 16px rgba(0, 230, 118, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    background: #69F0AE;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Secciones */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Tarjetas 3 Columnas */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 32px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: transform 0.25s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 14.5px;
+}
+
+/* Tarjetas de Enlaces Legales */
+.legal-links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 24px 28px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: inherit;
+    border: 1.5px solid #E2E8F0;
+    box-shadow: var(--shadow);
+    transition: all 0.25s ease;
+}
+
+.legal-card:hover {
+    transform: translateX(6px);
+    border-color: var(--primary);
+}
+
+.legal-card-icon {
+    font-size: 36px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.legal-card-content h3 {
+    font-size: 19px;
+    color: #1E293B;
+    margin-bottom: 6px;
+}
+
+.legal-card-content p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.link-arrow {
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Documentos de Texto Legal */
+.legal-document-container {
+    background: var(--card-bg);
+    padding: 45px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: -30px auto 40px;
+    position: relative;
+    border: 1px solid #E2E8F0;
+}
+
+.legal-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.legal-nav-back {
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.legal-nav-back:hover {
+    text-decoration: underline;
+}
+
+.legal-lang-toggle {
+    display: inline-flex;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 20px;
+    padding: 4px 12px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3730A3;
+}
+
+.legal-lang-toggle:hover {
+    background: #E0E7FF;
+}
+
+.legal-content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.legal-date {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #F1F5F9;
+}
+
+.legal-content h2 {
+    font-size: 22px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: #1E293B;
+}
+
+.legal-content p, .legal-content ul {
+    margin-bottom: 16px;
+    color: #334155;
+    font-size: 15.5px;
+}
+
+.legal-content ul {
+    padding-left: 24px;
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+}
+
+.legal-alert {
+    background: #FFF8E1;
+    border-left: 4px solid #FFB300;
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin: 24px 0;
+    color: #5D4037;
+    font-size: 14.5px;
+}
+
+.legal-alert-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+/* Contacto & Footer */
+.contact-box {
+    background: linear-gradient(135deg, #1E293B, #0F172A);
+    color: white;
+    padding: 40px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.contact-box h2 {
+    color: #FFD54F;
+    margin-bottom: 12px;
+}
+
+.contact-email {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+footer {
+    background: #0B1120;
+    color: #94A3B8;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #CBD5E1;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-links a:hover {
+    color: #FFD54F;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 34px; }
+    .legal-document-container { padding: 24px; }
+    .footer-content { flex-direction: column; }
+}
